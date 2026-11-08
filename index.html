@@ -6,7 +6,7 @@
   <title>Fahad Umrani — Web &amp; Python Developer · Blockchain Builder · AI Product Creator</title>
   <meta name="description" content="Fahad Umrani is a web & Python developer from Pakistan — creator of Umrani AI, developer of a blockchain-based voting system. Expertise: web development, Python, blockchain/Web3 and AI integration." />
   <meta name="author" content="Fahad Umrani" />
-  <meta name="theme-color" content="#002050" />
+  <meta name="theme-color" content="#f8fafc" />
 
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website" />
@@ -70,21 +70,40 @@
     <!-- ===== HERO ===== -->
     <section id="home" class="hero">
       <div class="container hero-inner">
-        <p class="hero-hello">Developer Portfolio</p>
-        <h1>Fahad <span class="text-gold">Umrani</span></h1>
+        <div class="hero-identity">
+          <div class="hero-avatar" aria-hidden="true">FU</div>
+          <div class="hero-identity-text">
+            <p class="hero-identity-name">Fahad Umrani</p>
+            <p class="hero-identity-role">Student in Cadet College Panjgur</p>
+          </div>
+        </div>
+        <h1>I design and build complete, production-grade <span class="text-gold">software products</span>.</h1>
         <h2 class="hero-sub">Web &amp; Python Developer · Blockchain Builder · AI Product Creator</h2>
         <p class="hero-text">
-          I design and build complete, production-grade software products: an AI chat
-          application that runs entirely in the browser, a blockchain-based voting
-          system with biometric face verification, and Python software used in
-          everyday work. Every project on this page was designed, built and tested
-          end to end.
+          An AI chat app, a blockchain voting system with face verification, and Python
+          tools — every project here was designed, built and tested end to end.
         </p>
         <div class="hero-cta">
           <a href="#projects" class="btn btn-gold">View Projects</a>
           <a href="#expertise" class="btn btn-ghost">Areas of Expertise</a>
         </div>
               </div>
+      <!-- 3D decoration (pure CSS 3D, no library): rotating cube carrying
+           Fahad's stack on its faces, with two orbit rings. -->
+      <div class="hero-3d" aria-hidden="true">
+        <div class="hero-3d-scene">
+          <div class="cube">
+            <div class="cube-face cube-front">&lt;/&gt;</div>
+            <div class="cube-face cube-back">AI</div>
+            <div class="cube-face cube-right">Py</div>
+            <div class="cube-face cube-left">⬡</div>
+            <div class="cube-face cube-top">JS</div>
+            <div class="cube-face cube-bottom">C++</div>
+          </div>
+          <div class="orbit-ring ring-1"><span class="orbit-dot"></span></div>
+          <div class="orbit-ring ring-2"><span class="orbit-dot"></span></div>
+        </div>
+      </div>
       <a href="#about" class="scroll-down" aria-label="Scroll down to About">↓</a>
     </section>
 
@@ -96,22 +115,19 @@
           <div class="about-text">
             <p>
               <strong>Fahad Umrani</strong> is a web and Python developer based in
-              Pakistan. His principal project is <strong>Umrani AI</strong>, an AI chat
-              web application that operates entirely on the client side: several AI
-              providers with automatic failover, streaming responses, and conversation
-              history stored locally in the browser through IndexedDB — with no
-              application server.
+              Pakistan. His principal project is <strong>Umrani AI</strong> — an AI chat
+              app that runs entirely in the browser, with several AI providers,
+              automatic failover and streaming responses.
             </p>
             <p>
               His second flagship project is a <strong>Blockchain-Based Voting
-              System</strong>, developed as a final-year academic project. It combines
-              citizen records, live-camera face verification, and tamper-evident
-              commit–reveal voting on the Ethereum Sepolia network, and was verified
-              through complete end-to-end testing of both ballots on-chain.
+              System</strong>, a final-year academic project with live-camera face
+              verification and commit–reveal voting on Ethereum Sepolia, tested
+              end to end on-chain.
             </p>
             <p>
               He is a <strong>second-year student at a Cadet College</strong>,
-              pursuing his intermediate education alongside his development work.
+              studying alongside his development work.
             </p>
             <ul class="about-facts">
               <li><strong>Umrani AI</strong><span>Creator &amp; lead developer</span></li>
@@ -127,13 +143,13 @@
     <section id="expertise" class="section section-alt">
       <div class="container">
         <h2 class="section-title"><span>02.</span> Areas of Expertise</h2>
-        <p class="section-desc">The programming languages listed below are those in which the flagship projects — Umrani AI and the Blockchain-Based Voting System — were designed and built, together with C and C++ for embedded and robotics work on ESP32 and Arduino platforms. Each competency is demonstrated in a completed, working product.</p>
+        <p class="section-desc">The languages behind his flagship projects — Umrani AI and the Blockchain-Based Voting System — plus C and C++ for ESP32 and Arduino robotics work.</p>
 
         <div class="expertise-grid">
           <article class="expertise-card">
             <div class="expertise-icon" aria-hidden="true">&lt;/&gt;</div>
             <h3>Web Development</h3>
-            <p>Responsive websites and complete single-page applications in HTML5, CSS3 and vanilla JavaScript — including fully client-side applications with local data storage and live API integration, as delivered in Umrani AI.</p>
+            <p>Responsive websites and single-page apps in HTML5, CSS3 and vanilla JavaScript — including fully client-side apps like Umrani AI.</p>
             <ul class="chips">
               <li>HTML</li><li>CSS</li><li>JavaScript</li><li>React</li>
             </ul>
@@ -142,7 +158,7 @@
           <article class="expertise-card">
             <div class="expertise-icon" aria-hidden="true">Py</div>
             <h3>Python Development</h3>
-            <p>Backend systems and application software in Python. The voting platform's server is built on Flask with SQLite data storage, session security, audit logging and blockchain integration through Web3.py.</p>
+            <p>Backend systems in Python — the voting platform runs on Flask with SQLite, session security, audit logging and Web3.py.</p>
             <ul class="chips">
               <li>Python</li><li>Java</li>
             </ul>
@@ -151,7 +167,7 @@
           <article class="expertise-card">
             <div class="expertise-icon" aria-hidden="true">⬡</div>
             <h3>Blockchain &amp; Web3</h3>
-            <p>Smart-contract systems designed for verifiable trust: commit–reveal election contracts in Solidity, deployed on Ethereum Sepolia, with wallet and key management and complete on-chain verification of the voting lifecycle.</p>
+            <p>Commit–reveal election contracts in Solidity on Ethereum Sepolia, with wallet security and full on-chain verification.</p>
             <ul class="chips">
               <li>Solidity</li>
             </ul>
@@ -160,7 +176,7 @@
           <article class="expertise-card">
             <div class="expertise-icon" aria-hidden="true">AI</div>
             <h3>AI &amp; Computer Vision</h3>
-            <p>Multi-provider AI integration in Umrani AI — OpenAI-compatible APIs and the Google Gemini API, with streaming responses and automatic failover — together with face verification in the voting system, matching live camera images against records using DeepFace, ArcFace and OpenCV.</p>
+            <p>Multi-provider AI in Umrani AI with streaming and failover, plus face verification using DeepFace, ArcFace and OpenCV.</p>
             <ul class="chips">
               <li>JavaScript</li><li>Python</li>
             </ul>
@@ -169,7 +185,7 @@
           <article class="expertise-card">
             <div class="expertise-icon" aria-hidden="true">C++</div>
             <h3>Robotics &amp; Embedded Systems</h3>
-            <p>Development of embedded and robotics projects on ESP32 and Arduino platforms, programmed in C and C++ — encompassing sensor integration, motor control and hardware-level logic for physical computing systems.</p>
+            <p>Embedded and robotics projects on ESP32 and Arduino in C and C++ — sensors, motor control and hardware-level logic.</p>
             <ul class="chips">
               <li>C</li><li>C++</li>
             </ul>
@@ -192,7 +208,7 @@
             <div class="project-body">
               <span class="project-status status-done">Completed</span>
               <h3>Umrani AI</h3>
-              <p>An AI chat web application that runs entirely in the browser, with no backend server. It integrates multiple AI providers — OpenAI-compatible APIs and Google Gemini — with automatic failover, streaming responses, formatted markdown and code rendering, and conversation history stored locally in IndexedDB.</p>
+              <p>An AI chat app that runs entirely in the browser — multiple AI providers with automatic failover, streaming replies, and chat history stored locally in IndexedDB.</p>
               <div class="project-tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>IndexedDB</span><span>Gemini API</span></div>
               <p class="project-links">
                 <a href="https://umraniai.devs.li/" target="_blank" rel="noopener">Visit Live Site ↗</a>
@@ -205,17 +221,17 @@
             <div class="project-body">
               <span class="project-status status-done">Completed</span>
               <h3>Blockchain-Based Voting System</h3>
-              <p>A final-year academic project providing secure electronic voting: citizen records administration, live-camera face verification, National and Provincial Assembly ballots within a single session, and commit–reveal voting recorded on Ethereum Sepolia, supported by an append-only security and audit log.</p>
+              <p>A final-year project for secure electronic voting: live-camera face verification, National and Provincial Assembly ballots in one session, and commit–reveal voting on Ethereum Sepolia.</p>
               <div class="project-tags"><span>Python</span><span>Flask</span><span>Solidity</span><span>Web3.py</span><span>DeepFace</span><span>OpenCV</span></div>
             </div>
           </article>
 
-          <article class="project-card">
+          <article class="project-card robot-card">
             <img class="project-img" src="project-robot.jpg" alt="AI Embedded Robot — a robot that moves and speaks like a human" loading="lazy" />
             <div class="project-body">
               <span class="project-status status-future">Future Project</span>
               <h3>AI Embedded Robot</h3>
-              <p>An AI-embedded robot that not only moves autonomously but also speaks naturally, like a real human. Built on ESP32 and Arduino platforms and programmed in C/C++, it combines sensor integration and motor control with conversational AI, so it can navigate its surroundings and hold a spoken conversation.</p>
+              <p>An AI robot that moves autonomously and speaks naturally, like a real human. Built on ESP32 and Arduino with C/C++, sensors, motors and conversational AI.</p>
               <div class="project-tags"><span>ESP32</span><span>Arduino</span><span>C/C++</span><span>Robotics</span><span>Conversational AI</span></div>
             </div>
           </article>
@@ -228,7 +244,7 @@
     <!-- ===== EXPERIENCE & EDUCATION ===== -->
     <section id="experience" class="section section-alt">
       <div class="container">
-        <h2 class="section-title"><span>04.</span> Education &amp; Experience</h2>
+        <h2 class="section-title"><span>03.</span> Education &amp; Experience</h2>
         <p class="section-desc">Fahad Umrani is currently studying in Class 2nd Year.</p>
       </div>
 </section>
@@ -236,7 +252,7 @@
     <!-- ===== CONTRIBUTORS ===== -->
     <section id="contributors" class="section">
       <div class="container">
-        <h2 class="section-title"><span>05.</span> Contributors</h2>
+        <h2 class="section-title"><span>04.</span> Contributors</h2>
         <p class="section-desc">Individuals who have contributed to these projects.</p>
         <div class="contributors-grid">
           <article class="contributor-card">
@@ -274,7 +290,7 @@
     <!-- ===== CONTACT ===== -->
     <section id="contact" class="section section-alt">
       <div class="container contact-content">
-        <h2 class="section-title"><span>06.</span> Contact</h2>
+        <h2 class="section-title"><span>05.</span> Contact</h2>
         <p class="contact-text">
           For enquiries concerning Umrani AI, software development projects or
           collaboration, please contact me by email. I endeavour to respond within

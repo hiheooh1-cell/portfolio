@@ -3,7 +3,7 @@
 <h3 align="center">Web & Python Developer · Blockchain Builder · AI Product Creator</h3>
 
 <p align="center">
-  <a href="https://umrani.devs.li/"><img src="https://img.shields.io/badge/Website-umrani.devs.li-002050?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Website"></a>
+  <a href="https://umrani.devs.li/"><img src="https://img.shields.io/badge/Website-umrani.devs.li-2563EB?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Website"></a>
   <a href="https://www.instagram.com/fahadumrani_/"><img src="https://img.shields.io/badge/Instagram-fahadumrani__-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram"></a>
   <a href="https://www.pinterest.com/techwithfahad/"><img src="https://img.shields.io/badge/Pinterest-techwithfahad-BD081C?style=for-the-badge&logo=pinterest&logoColor=white" alt="Pinterest"></a>
 </p>

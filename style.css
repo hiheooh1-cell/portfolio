@@ -1,19 +1,22 @@
-/* ===== CSS VARIABLES — Umrani brand palette (navy & gold) ===== */
+/* ===== CSS VARIABLES — Blue + Cyan + White palette (adopted on Fahad's
+   order, 2026-11-08: background #F8FAFC, primary blue #2563EB, cyan accent
+   #06B6D4, slate text #334155). Variable names kept from the original
+   theme: --navy holds the primary blue, --gold holds the cyan accent. ===== */
 :root {
-  --navy: #002050;
-  --navy-deep: #001233;
-  --navy-soft: #0a326e;
-  --gold: #c89020;
-  --gold-light: #e8b34b;
-  --bg: #faf9f6;
-  --bg-alt: #f2f0ea;
+  --navy: #2563eb;
+  --navy-deep: #1e3a8a;
+  --navy-soft: #3b82f6;
+  --gold: #06b6d4;
+  --gold-light: #22d3ee;
+  --bg: #f8fafc;
+  --bg-alt: #eef2f7;
   --card: #ffffff;
-  --text: #12233b;
-  --text-muted: #5b6b80;
-  --border: #e4e1d8;
-  --shadow: 0 10px 30px rgba(0, 32, 80, 0.09);
-  --shadow-lg: 0 18px 44px rgba(0, 32, 80, 0.14);
-  --nav-bg: rgba(250, 249, 246, 0.9);
+  --text: #334155;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+  --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 18px 44px rgba(15, 23, 42, 0.12);
+  --nav-bg: rgba(255, 255, 255, 0.9);
 }
 
 /* ===== RESET & BASE ===== */
@@ -26,6 +29,7 @@
 }
 
 html {
+  font-size: 17.5px; /* base text slightly larger (Fahad's order, 2026-11-08) — the design is rem-based, so all text scales together */
   scroll-behavior: smooth;
   scroll-padding-top: 80px; /* keep anchors clear of the fixed navbar */
 }
@@ -40,7 +44,7 @@ body {
 }
 
 ::selection {
-  background: rgba(200, 144, 32, 0.35);
+  background: rgba(6, 182, 212, 0.3);
 }
 
 /* Visible keyboard focus for every interactive element */
@@ -139,25 +143,26 @@ a:hover {
 }
 
 .btn-gold {
-  background: linear-gradient(135deg, var(--gold), var(--gold-light));
-  color: var(--navy-deep);
-  box-shadow: 0 10px 26px rgba(200, 144, 32, 0.35);
+  background: var(--navy);
+  color: #ffffff;
+  box-shadow: 0 10px 26px rgba(37, 99, 235, 0.32);
 }
 
 .btn-gold:hover {
-  color: var(--navy-deep);
-  box-shadow: 0 14px 32px rgba(200, 144, 32, 0.45);
+  background: var(--gold);
+  color: #ffffff;
+  box-shadow: 0 14px 32px rgba(6, 182, 212, 0.38);
 }
 
 .btn-ghost {
-  border-color: rgba(255, 255, 255, 0.45);
-  color: #ffffff;
+  border-color: #cbd5e1;
+  color: var(--text);
   background: transparent;
 }
 
 .btn-ghost:hover {
   border-color: var(--gold);
-  color: var(--gold-light);
+  color: #0891b2;
 }
 
 .btn-primary {
@@ -168,7 +173,7 @@ a:hover {
 
 .btn-primary:hover {
   background: var(--gold);
-  color: var(--navy-deep);
+  color: #ffffff;
 }
 
 /* ===== NAVBAR ===== */
@@ -184,7 +189,7 @@ a:hover {
 
 .navbar.scrolled {
   border-bottom-color: var(--border);
-  box-shadow: 0 6px 24px rgba(0, 32, 80, 0.07);
+  box-shadow: 0 6px 24px rgba(15, 23, 42, 0.08);
 }
 
 .nav-inner {
@@ -198,15 +203,15 @@ a:hover {
   font-weight: 800;
   font-size: 1.18rem;
   letter-spacing: -0.01em;
-  color: var(--navy);
+  color: #1e293b;
 }
 
 .logo span {
-  color: var(--gold);
+  color: var(--navy);
 }
 
 .logo:hover {
-  color: var(--navy);
+  color: #1e293b;
 }
 
 .nav-links {
@@ -252,7 +257,7 @@ a:hover {
 .hamburger span {
   width: 22px;
   height: 2px;
-  background: var(--navy);
+  background: var(--text);
   border-radius: 2px;
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
@@ -267,15 +272,56 @@ a:hover {
   display: flex;
   align-items: center;
   position: relative;
-  color: #eef2f8;
+  color: var(--text);
   background:
-    radial-gradient(760px 420px at 88% 6%, rgba(200, 144, 32, 0.22), transparent 62%),
-    radial-gradient(640px 420px at 6% 92%, rgba(200, 144, 32, 0.10), transparent 60%),
-    linear-gradient(160deg, var(--navy-soft) 0%, var(--navy) 46%, var(--navy-deep) 100%);
+    radial-gradient(760px 420px at 88% 6%, rgba(37, 99, 235, 0.1), transparent 62%),
+    radial-gradient(640px 420px at 6% 92%, rgba(6, 182, 212, 0.1), transparent 60%),
+    linear-gradient(160deg, #ffffff 0%, #f8fafc 55%, #eef2f7 100%);
 }
 
 .hero-inner {
   padding: 130px 0 90px;
+}
+
+/* Identity block (Fahad's order, 2026-11-08): small photo icon + name +
+   college line at the top of the hero. The icon is a monogram placeholder
+   until he supplies a real photo — swap the .hero-avatar div for an
+   <img class="hero-avatar"> when he does. */
+.hero-identity {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 26px;
+}
+
+.hero-avatar {
+  width: 54px;
+  height: 54px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--navy);
+  border: 2px solid var(--gold);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  object-fit: cover;
+}
+
+.hero-identity-name {
+  font-weight: 700;
+  font-size: 1.02rem;
+  color: #1e293b;
+  line-height: 1.25;
+}
+
+.hero-identity-role {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.35;
 }
 
 .hero-hello {
@@ -292,23 +338,23 @@ a:hover {
   line-height: 1.08;
   font-weight: 900;
   letter-spacing: -0.02em;
-  color: #ffffff;
+  color: #1e293b;
 }
 
 .text-gold {
-  color: var(--gold-light);
+  color: var(--navy);
 }
 
 .hero-sub {
   font-size: clamp(1.15rem, 3vw, 1.55rem);
   font-weight: 600;
-  color: #c9d6ea;
+  color: #475569;
   margin: 14px 0 20px;
 }
 
 .hero-text {
   max-width: 640px;
-  color: #aebfd9;
+  color: var(--text-muted);
   margin-bottom: 34px;
 }
 
@@ -330,13 +376,13 @@ a:hover {
 .stat-num {
   font-size: 2rem;
   font-weight: 800;
-  color: var(--gold-light);
+  color: var(--navy);
   line-height: 1.15;
 }
 
 .stat-label {
   font-size: 0.85rem;
-  color: #aebfd9;
+  color: var(--text-muted);
   margin-top: 4px;
 }
 
@@ -346,12 +392,12 @@ a:hover {
   bottom: 24px;
   transform: translateX(-50%);
   font-size: 1.25rem;
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(51, 65, 85, 0.55);
   animation: bounce 1.8s infinite;
 }
 
 .scroll-down:hover {
-  color: var(--gold-light);
+  color: var(--gold);
 }
 
 @keyframes bounce {
@@ -394,7 +440,7 @@ a:hover {
 .about-facts strong {
   font-size: 1.22rem;
   font-weight: 800;
-  color: var(--navy);
+  color: var(--text);
   line-height: 1.25;
 }
 
@@ -455,7 +501,7 @@ a:hover {
   padding: 0 12px;
   border-radius: 12px;
   background: var(--navy);
-  color: var(--gold-light);
+  color: #ffffff;
   font-weight: 800;
   font-size: 1.05rem;
   letter-spacing: 0.02em;
@@ -465,7 +511,7 @@ a:hover {
 .expertise-card h3 {
   font-size: 1.08rem;
   margin-bottom: 8px;
-  color: var(--navy);
+  color: var(--text);
 }
 
 .expertise-card p {
@@ -485,16 +531,16 @@ a:hover {
   font-size: 0.76rem;
   font-weight: 600;
   color: var(--navy);
-  background: rgba(0, 32, 80, 0.07);
-  border: 1px solid rgba(0, 32, 80, 0.10);
+  background: rgba(37, 99, 235, 0.07);
+  border: 1px solid rgba(37, 99, 235, 0.14);
   padding: 4px 11px;
   border-radius: 999px;
   transition: background 0.2s ease, color 0.2s ease;
 }
 
 .chips li:hover {
-  background: var(--navy);
-  color: var(--gold-light);
+  background: var(--gold);
+  color: #ffffff;
 }
 
 /* Proficiency bars */
@@ -508,7 +554,7 @@ a:hover {
 
 .proficiency-title {
   font-size: 1.15rem;
-  color: var(--navy);
+  color: var(--text);
   margin-bottom: 24px;
 }
 
@@ -541,7 +587,7 @@ a:hover {
 .bar-track {
   height: 10px;
   border-radius: 999px;
-  background: #e9e5da;
+  background: #e2e8f0;
   overflow: hidden;
 }
 
@@ -549,7 +595,7 @@ a:hover {
   height: 100%;
   width: 0;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--navy) 0%, var(--navy-soft) 55%, var(--gold) 100%);
+  background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 100%);
   transition: width 1.15s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
@@ -563,7 +609,7 @@ a:hover {
 .project-card {
   display: flex;
   flex-direction: column;
-  background: var(--card);
+  background: #f1f5f9;
   border: 1px solid var(--border);
   border-radius: 14px;
   overflow: hidden;
@@ -592,7 +638,7 @@ a:hover {
 }
 
 .project-body h3 {
-  color: var(--navy);
+  color: var(--text);
   margin-bottom: 8px;
 }
 
@@ -614,7 +660,7 @@ a:hover {
   font-size: 0.74rem;
   font-weight: 600;
   color: var(--navy);
-  background: rgba(200, 144, 32, 0.14);
+  background: rgba(37, 99, 235, 0.1);
   padding: 4px 10px;
   border-radius: 999px;
 }
@@ -640,7 +686,7 @@ a:hover {
   position: relative;
   max-width: 680px;
   padding-left: 28px;
-  border-left: 2px solid rgba(0, 32, 80, 0.18);
+  border-left: 2px solid rgba(51, 65, 85, 0.18);
 }
 
 .timeline-item {
@@ -660,8 +706,8 @@ a:hover {
   height: 13px;
   border-radius: 50%;
   background: var(--gold);
-  border: 2px solid var(--navy);
-  box-shadow: 0 0 0 4px rgba(200, 144, 32, 0.22);
+  border: 2px solid #f8fafc;
+  box-shadow: 0 0 0 4px rgba(6, 182, 212, 0.25);
 }
 
 .timeline-date {
@@ -674,7 +720,7 @@ a:hover {
 
 .timeline-content h3 {
   font-size: 1.04rem;
-  color: var(--navy);
+  color: var(--text);
   margin: 4px 0;
 }
 
@@ -710,7 +756,7 @@ a:hover {
 
 .contact-list strong {
   min-width: 84px;
-  color: var(--navy);
+  color: var(--text);
   font-size: 0.82rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -731,7 +777,7 @@ a:hover {
 .social-links a {
   display: inline-block;
   padding: 8px 18px;
-  border: 1px solid var(--navy);
+  border: 1px solid #cbd5e1;
   border-radius: 999px;
   font-size: 0.88rem;
   font-weight: 600;
@@ -740,8 +786,9 @@ a:hover {
 }
 
 .social-links a:hover {
-  background: var(--navy);
-  color: var(--gold-light);
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #ffffff;
 }
 
 /* ===== CONTRIBUTORS ===== */
@@ -774,11 +821,11 @@ a:hover {
   object-fit: cover;
   object-position: center 24%;
   border-radius: 50%;
-  border: 3px solid rgba(200, 144, 32, 0.55);
+  border: 3px solid rgba(6, 182, 212, 0.5);
 }
 
 .contributor-card h3 {
-  color: var(--navy);
+  color: var(--text);
   margin-bottom: 4px;
 }
 
@@ -789,8 +836,8 @@ a:hover {
 
 /* ===== FOOTER ===== */
 .footer {
-  background: linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
-  color: #c9d6ea;
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+  color: #cbd5e1;
   padding: 52px 0 36px;
   text-align: center;
 }
@@ -812,7 +859,7 @@ a:hover {
 
 .footer-tag {
   font-size: 0.92rem;
-  color: #93a9c9;
+  color: #94a3b8;
 }
 
 .social-footer {
@@ -833,7 +880,7 @@ a:hover {
 
 .footer-copy {
   font-size: 0.85rem;
-  color: #7e93b5;
+  color: #94a3b8;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   padding-top: 18px;
   width: 100%;
@@ -850,7 +897,7 @@ a:hover {
   border-radius: 50%;
   border: none;
   background: var(--navy);
-  color: var(--gold-light);
+  color: #ffffff;
   font-size: 1.1rem;
   cursor: pointer;
   box-shadow: var(--shadow-lg);
@@ -860,7 +907,212 @@ a:hover {
 .to-top:hover {
   transform: translateY(-3px);
   background: var(--gold);
-  color: var(--navy-deep);
+  color: #ffffff;
+}
+
+/* ===== 3D EFFECTS (Fahad's order, 2026-11-08) ===== */
+/* Hero scene: rotating CSS-3D cube (his stack on the faces) + orbit rings
+   with satellite dots. Pure CSS — no library, no images. */
+.hero-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-3d {
+  position: absolute;
+  right: 5%;
+  bottom: 12%;
+  width: 330px;
+  height: 330px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-3d-scene {
+  position: absolute;
+  inset: 0;
+  perspective: 1100px;
+  transform-style: preserve-3d;
+  transition: transform 0.35s ease-out;
+}
+
+.cube {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 148px;
+  height: 148px;
+  margin: -74px 0 0 -74px;
+  transform-style: preserve-3d;
+  animation: cube-spin 22s linear infinite;
+}
+
+.cube-face {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--navy);
+  background: linear-gradient(145deg, rgba(37, 99, 235, 0.08), rgba(6, 182, 212, 0.08));
+  border: 1.5px solid rgba(37, 99, 235, 0.4);
+  border-radius: 14px;
+}
+
+.cube-front  { transform: rotateY(0deg) translateZ(74px); }
+.cube-back   { transform: rotateY(180deg) translateZ(74px); }
+.cube-right  { transform: rotateY(90deg) translateZ(74px); }
+.cube-left   { transform: rotateY(-90deg) translateZ(74px); }
+.cube-top    { transform: rotateX(90deg) translateZ(74px); }
+.cube-bottom { transform: rotateX(-90deg) translateZ(74px); }
+
+@keyframes cube-spin {
+  from { transform: rotateX(-16deg) rotateY(0deg); }
+  to   { transform: rotateX(-16deg) rotateY(360deg); }
+}
+
+.orbit-ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  border: 2px solid rgba(6, 182, 212, 0.45);
+  transform-style: preserve-3d;
+}
+
+.ring-1 {
+  width: 302px;
+  height: 302px;
+  margin: -151px 0 0 -151px;
+  animation: ring-spin 14s linear infinite;
+}
+
+.ring-2 {
+  width: 240px;
+  height: 240px;
+  margin: -120px 0 0 -120px;
+  border-color: rgba(37, 99, 235, 0.35);
+  animation: ring-spin-rev 19s linear infinite;
+}
+
+.orbit-dot {
+  position: absolute;
+  left: 50%;
+  top: -6px;
+  width: 10px;
+  height: 10px;
+  margin-left: -5px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.8);
+}
+
+.ring-2 .orbit-dot {
+  background: var(--navy);
+  box-shadow: 0 0 10px rgba(37, 99, 235, 0.8);
+}
+
+@keyframes ring-spin {
+  from { transform: rotateX(72deg) rotateZ(0deg); }
+  to   { transform: rotateX(72deg) rotateZ(360deg); }
+}
+
+@keyframes ring-spin-rev {
+  from { transform: rotateX(72deg) rotateZ(360deg); }
+  to   { transform: rotateX(72deg) rotateZ(0deg); }
+}
+
+@media (max-width: 1100px) {
+  .hero-3d { display: none; }
+}
+
+/* 3D tilt cards: JS (script.js §6) rotates the card toward the cursor and
+   moves the shine via --mx/--my. Touch devices and reduced-motion users
+   never get the JS, so the cards simply keep their normal hover lift. */
+.tilt {
+  transform-style: preserve-3d;
+}
+
+.project-card,
+.expertise-card,
+.contributor-card {
+  position: relative;
+}
+
+.expertise-card,
+.contributor-card {
+  overflow: hidden;
+}
+
+.project-card::after,
+.expertise-card::after,
+.contributor-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(255, 255, 255, 0.35), transparent 45%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.project-card:hover::after,
+.expertise-card:hover::after,
+.contributor-card:hover::after {
+  opacity: 1;
+}
+
+/* Project cards (Fahad's orders, 2026-11-08 — robot card first, then all
+   three): each project photo sits as a raised 3D panel — it gently floats
+   at rest (staggered, so the three never move in sync) and lifts toward
+   the viewer on hover, with the badge floating on a shallower layer. */
+.project-card {
+  transform-style: preserve-3d;
+}
+
+.projects-grid .project-card:nth-child(2) .project-img {
+  animation-delay: -1.8s;
+}
+
+.projects-grid .project-card:nth-child(3) .project-img {
+  animation-delay: -3.6s;
+}
+
+.project-card .project-img {
+  width: calc(100% - 24px);
+  height: 168px;
+  margin: 12px 12px 0;
+  border-bottom: none;
+  border-radius: 12px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.project-card:not(:hover) .project-img {
+  animation: card-float 5.5s ease-in-out infinite;
+}
+
+.project-card:hover .project-img {
+  transform: translateZ(46px) scale(1.03) rotate(-1deg);
+  box-shadow: 0 26px 36px rgba(15, 23, 42, 0.28);
+}
+
+@keyframes card-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.project-card .project-body {
+  transform-style: preserve-3d;
+}
+
+.project-card .project-status {
+  transition: transform 0.35s ease;
+}
+
+.project-card:hover .project-status {
+  transform: translateZ(22px);
 }
 
 /* ===== SCROLL REVEAL ===== */
@@ -879,6 +1131,8 @@ a:hover {
   .reveal { transition: none; opacity: 1; transform: none; }
   .bar-fill { transition: none; }
   .scroll-down { animation: none; }
+  .cube, .orbit-ring { animation: none; }
+  .project-card .project-img { animation: none; }
   html { scroll-behavior: auto; }
 }
 
@@ -908,7 +1162,7 @@ a:hover {
     gap: 0;
     background: var(--bg);
     border-bottom: 1px solid var(--border);
-    box-shadow: 0 18px 30px rgba(0, 32, 80, 0.10);
+    box-shadow: 0 18px 30px rgba(15, 23, 42, 0.12);
     padding: 10px 0;
     transform: translateY(-135%);
     transition: transform 0.3s ease;
@@ -946,5 +1200,5 @@ a:hover {
 
 /* Project status badges (added 2026-11-08) */
 .project-status{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.28rem .7rem;border-radius:999px;margin-bottom:.55rem}
-.status-done{background:#002050;color:#C89020}
-.status-future{background:transparent;color:#002050;border:1.5px solid #C89020}
+.status-done{background:rgba(37,99,235,.1);color:#2563EB;border:1px solid rgba(37,99,235,.35)}
+.status-future{background:transparent;color:#0891B2;border:1.5px solid rgba(6,182,212,.55)}

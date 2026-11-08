@@ -104,3 +104,45 @@ backToTop.addEventListener("click", () =>
 
 // ----- 5. Footer year -----
 document.getElementById("year").textContent = new Date().getFullYear();
+
+// ----- 6. 3D tilt cards + hero parallax (2026-11-08) -----
+// Only for fine-pointer devices (mouse/trackpad); touch users and
+// reduced-motion users keep the plain hover behaviour.
+(() => {
+  const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!finePointer || reducedMotion) return;
+
+  const MAX_TILT = 7; // degrees
+  document.querySelectorAll(".project-card, .expertise-card, .contributor-card").forEach((card) => {
+    card.classList.add("tilt");
+    card.addEventListener("mousemove", (e) => {
+      const r = card.getBoundingClientRect();
+      const px = (e.clientX - r.left) / r.width;
+      const py = (e.clientY - r.top) / r.height;
+      card.style.transform =
+        `perspective(900px) rotateX(${((0.5 - py) * MAX_TILT).toFixed(2)}deg) ` +
+        `rotateY(${((px - 0.5) * MAX_TILT).toFixed(2)}deg) translateY(-6px)`;
+      card.style.setProperty("--mx", `${(px * 100).toFixed(1)}%`);
+      card.style.setProperty("--my", `${(py * 100).toFixed(1)}%`);
+    });
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "";
+    });
+  });
+
+  // Gentle parallax: the hero 3D scene drifts a few pixels with the cursor.
+  const scene = document.querySelector(".hero-3d-scene");
+  const hero = document.querySelector(".hero");
+  if (scene && hero) {
+    hero.addEventListener("mousemove", (e) => {
+      const r = hero.getBoundingClientRect();
+      const dx = (e.clientX - r.left) / r.width - 0.5;
+      const dy = (e.clientY - r.top) / r.height - 0.5;
+      scene.style.transform = `translate3d(${(dx * 18).toFixed(1)}px, ${(dy * 14).toFixed(1)}px, 0)`;
+    });
+    hero.addEventListener("mouseleave", () => {
+      scene.style.transform = "";
+    });
+  }
+})();
